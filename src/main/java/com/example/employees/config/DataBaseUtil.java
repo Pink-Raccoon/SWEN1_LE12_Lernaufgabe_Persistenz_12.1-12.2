@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class DataBaseUtil {
     private static Connection conn=null;
     private static DataBaseUtil dataBaseUtil = null;
-    private static final Logger LOGGER = Logger.getLogger(EmployeeDAOImpl.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(DataBaseUtil.class.getName());
     private static final String DBDRIVER = "org.h2.Driver";
     private static final String CONNECTIONCONFIG = "jdbc:h2:mem:test";
 
