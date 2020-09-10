@@ -6,6 +6,7 @@ import com.example.employees.domain.Employee;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import java.util.List;
 
 public class EmployeeJpaDao {
 
@@ -60,4 +61,6 @@ public class EmployeeJpaDao {
         entityManager.close();
         return result;
     }
+
+
 }
