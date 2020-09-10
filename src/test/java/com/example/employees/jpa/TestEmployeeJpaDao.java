@@ -33,19 +33,9 @@ public class TestEmployeeJpaDao {
         Assert.assertEquals(retrievedEmployee, employee);
     }
 
-    @Test
-    @Order(2)
-    public void shouldUpdateNewEmployee() {
-        Employee employee = new Employee("Felix", "Muster", "1-01-1987", "Unemployed", "Sales", "felix.muster@abc.com");
-        employee.setId(newId);
-        employeeJpaDao.updateEntity(employee);
-        Employee retrievedEmployee = employeeJpaDao.findEntityById(newId);
-        Assert.assertEquals(retrievedEmployee, employee);
-
-    }
 
     @Test
-    @Order(3)
+    @Order(4)
     public void shoulDeleteNewEmployee() {
         long beforeDelete = employeeJpaDao.count();
         employeeJpaDao.removeEntity(newId);
