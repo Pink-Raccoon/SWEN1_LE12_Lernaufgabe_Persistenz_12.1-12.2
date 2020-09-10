@@ -6,13 +6,14 @@ import com.example.employees.domain.Employee;
 
 public interface EmployeeDao {
 
-    public long addEmployee(Employee employee);
+    long addEmployee(Employee employee);
 
-    public List<Employee> getAllEmployees();
+    List<Employee> getAllEmployees();
 
-    public Employee getEmployeeById(long id);
+    Employee getEmployeeById(long id);
 
-    public boolean removeEmployee(long id);
+    boolean removeEmployee(long id);
 
-    public boolean updateEmployee(Employee employee);
+    boolean updateEmployee(Employee employee);
+
 }
