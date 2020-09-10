@@ -96,14 +96,14 @@ public class EmployeeDAOImpl implements EmployeeDao {
     @Override
     public Employee getEmployeeById(long id) {
 
-        List<Employee> employeeList = loadOnePersonToEmployeeListFromH2DB(id);
+        List<Employee> employeeList = loadPersonByIdToEmployeeListFromH2DB(id);
         Optional<Employee> match
                 = employeeList.stream()
                 .filter(e -> e.getId() == id)
                 .findFirst();
         if (match.isPresent()) {
             Employee employee = match.get();
-            LOGGER.log(Level.INFO, "Get existing Employee:" + employee.getName());
+            LOGGER.log(Level.INFO, "Get existing Employee:" + employee.getName() + " " + employee.getLastName());
             return employee;
         } else {
             throw new IllegalArgumentException("The Employee id " + id + " not found");
@@ -161,14 +161,14 @@ public class EmployeeDAOImpl implements EmployeeDao {
         return employeeList;
     }
 
-    private List<Employee> loadOnePersonToEmployeeListFromH2DB(long id) {
+    private List<Employee> loadPersonByIdToEmployeeListFromH2DB(long id) {
         List<Employee> employeeList = new ArrayList<>();
         try (Statement statement = conn.createStatement()) {
             conn.setAutoCommit(false);
             employeeList = populateList(statement, "select * from PERSON WHERE id=" + id);
             conn.commit();
         } catch (SQLException e) {
-            LOGGER.log(Level.SEVERE, "Error on loadOnePersonToEmployeeListFromH2DB", e);
+            LOGGER.log(Level.SEVERE, "Error on loadPersonByIdToEmployeeListFromH2DB", e);
         }
         return employeeList;
     }
