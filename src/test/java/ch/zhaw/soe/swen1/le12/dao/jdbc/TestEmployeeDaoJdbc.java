@@ -25,6 +25,7 @@ public class TestEmployeeDaoJdbc {
 	@Test
 	public void shouldReturnSixRecords() throws SQLException {
 		assertEquals(6, employeeDAO.getAllEmployees().size());
+		assertEquals(6, employeeDAO.count());
 	}
 
 	@Order(2)

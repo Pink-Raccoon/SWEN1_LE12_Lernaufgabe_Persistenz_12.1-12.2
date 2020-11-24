@@ -16,4 +16,6 @@ public interface EmployeeDao {
 
     void updateEmployee(Employee employee);
 
+    long count();
+
 }

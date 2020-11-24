@@ -198,8 +198,20 @@ public class EmployeeDaoJdbc implements EmployeeDao {
         employee.setEmail(rs.getString("email"));
         employee.setId(rs.getInt("id"));
         return employee;
+    }
 
-
+    @Override
+    public long count() {
+        int rowCount = -1;
+        try (Statement statement = conn.createStatement()) {
+            ResultSet rs = statement.executeQuery("SELECT COUNT(*) FROM " + "PERSON");
+            rs.next();
+            rowCount = rs.getInt(1);
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Error on count", e);
+        }
+        LOGGER.log(Level.INFO, "Employee count: {0}", rowCount);
+        return rowCount;
     }
 
 }

@@ -64,6 +64,7 @@ public class EmployeeDaoJpa implements EmployeeDao {
         entityManager.close();
     }
 
+    @Override
     public long count() {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
