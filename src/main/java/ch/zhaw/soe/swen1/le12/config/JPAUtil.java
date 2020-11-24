@@ -1,4 +1,4 @@
-package ch.zhaw.soe.swen1.config;
+package ch.zhaw.soe.swen1.le12.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

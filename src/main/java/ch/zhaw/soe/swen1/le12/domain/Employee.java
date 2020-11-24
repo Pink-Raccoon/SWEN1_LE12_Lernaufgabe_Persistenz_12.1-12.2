@@ -1,6 +1,6 @@
 /* Copyright 2015 Oracle and/or its affiliates. All rights reserved. */
 
-package ch.zhaw.soe.swen1.domain;
+package ch.zhaw.soe.swen1.le12.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,8 +1,8 @@
-package ch.zhaw.soe.swen1.dao;
+package ch.zhaw.soe.swen1.le12.dao;
 
 import java.util.List;
 
-import ch.zhaw.soe.swen1.domain.Employee;
+import ch.zhaw.soe.swen1.le12.domain.Employee;
 
 public interface EmployeeDao {
 

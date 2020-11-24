@@ -1,4 +1,4 @@
-package ch.zhaw.soe.swen1.dao;
+package ch.zhaw.soe.swen1.le12.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,8 +14,8 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import ch.zhaw.soe.swen1.config.DataBaseUtil;
-import ch.zhaw.soe.swen1.domain.Employee;
+import ch.zhaw.soe.swen1.le12.config.DataBaseUtil;
+import ch.zhaw.soe.swen1.le12.domain.Employee;
 
 public class EmployeeDAOImpl implements EmployeeDao {
 

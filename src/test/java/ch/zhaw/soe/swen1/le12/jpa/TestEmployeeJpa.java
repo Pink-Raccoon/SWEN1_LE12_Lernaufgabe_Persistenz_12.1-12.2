@@ -1,7 +1,7 @@
-package ch.zhaw.soe.swen1.jpa;
+package ch.zhaw.soe.swen1.le12.jpa;
 
 
-import ch.zhaw.soe.swen1.domain.Employee;
+import ch.zhaw.soe.swen1.le12.domain.Employee;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
 
