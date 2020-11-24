@@ -12,8 +12,8 @@ public interface EmployeeDao {
 
     Employee getEmployeeById(long id);
 
-    boolean removeEmployee(long id);
+    void removeEmployee(long id);
 
-    boolean updateEmployee(Employee employee);
+    void updateEmployee(Employee employee);
 
 }
