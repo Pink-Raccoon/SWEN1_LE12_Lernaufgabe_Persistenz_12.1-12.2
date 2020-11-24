@@ -1,31 +1,44 @@
-package ch.zhaw.soe.swen1.le12.jpa;
+package ch.zhaw.soe.swen1.le12.dao.jpa;
 
 import ch.zhaw.soe.swen1.le12.config.JPAUtil;
+import ch.zhaw.soe.swen1.le12.dao.EmployeeDao;
 import ch.zhaw.soe.swen1.le12.domain.Employee;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import java.util.List;
 
-public class EmployeeJpa {
+public class EmployeeDaoJpa implements EmployeeDao {
 
-    public void insertEntity(Employee employee) {
+    @Override
+    public long addEmployee(Employee employee) {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
         entityManager.persist(employee);
         entityManager.getTransaction().commit();
         entityManager.close();
+        return employee.getId();
     }
 
-    public Employee findEntityById(long id) {
+    @Override
+    public Employee getEmployeeById(long id) {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         Employee employee = entityManager.find(Employee.class, id);
         entityManager.close();
         return employee;
     }
 
-    public void updateEntity(Employee employee) {
+    @Override
+    public List<Employee> getAllEmployees() {
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        return entityManager.createQuery("from" + Employee.class.getName(), Employee.class)
+                .getResultList();
+    }
+
+    @Override
+    public void updateEmployee(Employee employee) {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
 
@@ -41,7 +54,8 @@ public class EmployeeJpa {
         entityManager.close();
     }
 
-    public void removeEntity(long id) {
+    @Override
+    public void removeEmployee(long id) {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         Employee employee = entityManager.find(Employee.class, id);

@@ -1,4 +1,4 @@
-package ch.zhaw.soe.swen1.le12.jpa;
+package ch.zhaw.soe.swen1.le12.dao.jpa;
 
 
 import ch.zhaw.soe.swen1.le12.domain.Employee;
@@ -9,15 +9,15 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestEmployeeJpa {
+public class TestEmployeeDaoJpa {
 
-    private EmployeeJpa employeeJpa;
-    private static final Logger LOGGER = Logger.getLogger(TestEmployeeJpa.class.getName());
+    private EmployeeDaoJpa employeeJpa;
+    private static final Logger LOGGER = Logger.getLogger(TestEmployeeDaoJpa.class.getName());
     private static long newId;
 
     @BeforeEach
     public void setUp() {
-        this.employeeJpa = new EmployeeJpa();
+        this.employeeJpa = new EmployeeDaoJpa();
     }
 
 
@@ -26,10 +26,9 @@ public class TestEmployeeJpa {
     public void shouldRetrieveNewEmployee()  throws SQLException {
         Employee employee = new Employee("Simpson", "Williams", "1-01-1985", "Unemployed", "Finance", "simpson.williams@abc.com");
 
-        employeeJpa.insertEntity(employee);
+        newId = employeeJpa.addEmployee(employee);
         LOGGER.info("employee:: " + employee.toString());
-        newId = employee.getId();
-        Employee retrievedEmployee = employeeJpa.findEntityById(newId);
+        Employee retrievedEmployee = employeeJpa.getEmployeeById(newId);
         Assert.assertEquals(retrievedEmployee, employee);
     }
 
@@ -38,7 +37,7 @@ public class TestEmployeeJpa {
     @Order(4)
     public void shoulDeleteNewEmployee() {
         long beforeDelete = employeeJpa.count();
-        employeeJpa.removeEntity(newId);
+        employeeJpa.removeEmployee(newId);
         long afterDelete = employeeJpa.count();
         Assert.assertEquals(beforeDelete, afterDelete + 1);
 
