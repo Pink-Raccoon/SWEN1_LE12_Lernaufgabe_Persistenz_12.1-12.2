@@ -1,4 +1,4 @@
-package ch.zhaw.soe.swen1.le12.dao;
+package ch.zhaw.soe.swen1.le12.dao.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,15 +15,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import ch.zhaw.soe.swen1.le12.config.DataBaseUtil;
+import ch.zhaw.soe.swen1.le12.dao.EmployeeDao;
 import ch.zhaw.soe.swen1.le12.domain.Employee;
 
-public class EmployeeDAOImpl implements EmployeeDao {
+public class EmployeeDaoJdbc implements EmployeeDao {
 
     // private List<Employee> employeeList = null;
     private final Connection conn;
-    private static final Logger LOGGER = Logger.getLogger(EmployeeDAOImpl.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(EmployeeDaoJdbc.class.getName());
 
-    public EmployeeDAOImpl() {
+    public EmployeeDaoJdbc() {
         conn = DataBaseUtil.getConn();
     }
 
@@ -112,26 +113,23 @@ public class EmployeeDAOImpl implements EmployeeDao {
 
 
     @Override
-    public boolean removeEmployee(long id) {
-        boolean result = false;
+    public void removeEmployee(long id) {
         String deleteSQL = "DELETE FROM PERSON WHERE id = ?";
         try (PreparedStatement statement = conn.prepareStatement(deleteSQL)) {
             conn.setAutoCommit(false);
             statement.setLong(1, id);
             statement.execute();
             conn.commit();
-            result = true;
             LOGGER.log(Level.INFO, "SQL deleted employee with id: {0}", id);
         } catch (SQLException e) {
             LOGGER.log(Level.SEVERE, "Error on delete Employee id:" + id, e);
         }
 
-        return result;
     }
 
 
     @Override
-    public boolean updateEmployee(Employee employee) {
+    public void updateEmployee(Employee employee) {
         try (Statement statement = conn.createStatement()) {
             conn.setAutoCommit(false);
             Date date = new SimpleDateFormat("dd-MM-yyyy").parse(employee.getBirthDate());
@@ -146,7 +144,6 @@ public class EmployeeDAOImpl implements EmployeeDao {
             LOGGER.log(Level.SEVERE, "Error parsing birthdate:" + employee.getBirthDate(), e);
         }
 
-        return false;
     }
 
     private List<Employee> loadAllPersonToEmployeeListFromH2DB() {
