@@ -9,15 +9,15 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestEmployeeJpaDao {
+public class TestEmployeeJpa {
 
-    private EmployeeJpaDao employeeJpaDao;
-    private static final Logger LOGGER = Logger.getLogger(TestEmployeeJpaDao.class.getName());
+    private EmployeeJpa employeeJpa;
+    private static final Logger LOGGER = Logger.getLogger(TestEmployeeJpa.class.getName());
     private static long newId;
 
     @BeforeEach
     public void setUp() {
-        this.employeeJpaDao = new EmployeeJpaDao();
+        this.employeeJpa = new EmployeeJpa();
     }
 
 
@@ -26,10 +26,10 @@ public class TestEmployeeJpaDao {
     public void shouldRetrieveNewEmployee()  throws SQLException {
         Employee employee = new Employee("Simpson", "Williams", "1-01-1985", "Unemployed", "Finance", "simpson.williams@abc.com");
 
-        employeeJpaDao.insertEntity(employee);
+        employeeJpa.insertEntity(employee);
         LOGGER.info("employee:: " + employee.toString());
         newId = employee.getId();
-        Employee retrievedEmployee = employeeJpaDao.findEntityById(newId);
+        Employee retrievedEmployee = employeeJpa.findEntityById(newId);
         Assert.assertEquals(retrievedEmployee, employee);
     }
 
@@ -37,9 +37,9 @@ public class TestEmployeeJpaDao {
     @Test
     @Order(4)
     public void shoulDeleteNewEmployee() {
-        long beforeDelete = employeeJpaDao.count();
-        employeeJpaDao.removeEntity(newId);
-        long afterDelete = employeeJpaDao.count();
+        long beforeDelete = employeeJpa.count();
+        employeeJpa.removeEntity(newId);
+        long afterDelete = employeeJpa.count();
         Assert.assertEquals(beforeDelete, afterDelete + 1);
 
     }

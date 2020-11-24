@@ -8,7 +8,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import java.util.List;
 
-public class EmployeeJpaDao {
+public class EmployeeJpa {
 
     public void insertEntity(Employee employee) {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
