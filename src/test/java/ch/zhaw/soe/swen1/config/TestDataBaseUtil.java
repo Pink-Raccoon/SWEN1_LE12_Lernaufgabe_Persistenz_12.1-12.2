@@ -1,4 +1,4 @@
-package com.example.employees.config;
+package ch.zhaw.soe.swen1.config;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;

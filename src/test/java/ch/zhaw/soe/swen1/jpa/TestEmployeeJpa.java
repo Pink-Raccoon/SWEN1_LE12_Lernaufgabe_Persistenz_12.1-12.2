@@ -1,7 +1,7 @@
-package com.example.employees.jpa;
+package ch.zhaw.soe.swen1.jpa;
 
 
-import com.example.employees.domain.Employee;
+import ch.zhaw.soe.swen1.domain.Employee;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
 

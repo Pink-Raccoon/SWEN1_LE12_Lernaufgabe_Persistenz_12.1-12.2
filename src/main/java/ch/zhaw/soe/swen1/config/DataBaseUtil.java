@@ -1,6 +1,4 @@
-package com.example.employees.config;
-
-import com.example.employees.dao.EmployeeDAOImpl;
+package ch.zhaw.soe.swen1.config;
 
 import java.sql.*;
 

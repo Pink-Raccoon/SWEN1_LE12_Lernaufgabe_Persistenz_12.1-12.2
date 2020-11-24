@@ -1,4 +1,4 @@
-package com.example.employees.config;
+package ch.zhaw.soe.swen1.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

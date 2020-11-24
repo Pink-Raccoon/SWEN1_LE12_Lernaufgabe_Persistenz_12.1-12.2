@@ -1,4 +1,4 @@
-package com.example.employees.dao;
+package ch.zhaw.soe.swen1.dao;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
 
-import com.example.employees.domain.Employee;
+import ch.zhaw.soe.swen1.domain.Employee;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestEmployeeDaoImpl {

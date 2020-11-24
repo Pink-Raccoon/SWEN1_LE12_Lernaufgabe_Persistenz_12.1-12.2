@@ -1,12 +1,11 @@
-package com.example.employees.jpa;
+package ch.zhaw.soe.swen1.jpa;
 
-import com.example.employees.config.JPAUtil;
-import com.example.employees.domain.Employee;
+import ch.zhaw.soe.swen1.config.JPAUtil;
+import ch.zhaw.soe.swen1.domain.Employee;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-import java.util.List;
 
 public class EmployeeJpa {
 
