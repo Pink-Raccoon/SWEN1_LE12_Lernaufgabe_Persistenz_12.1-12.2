@@ -1,23 +1,24 @@
-package ch.zhaw.soe.swen1.le12.dao;
+package ch.zhaw.soe.swen1.le12.dao.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.sql.SQLException;
 
+import ch.zhaw.soe.swen1.le12.dao.EmployeeDao;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
 
 import ch.zhaw.soe.swen1.le12.domain.Employee;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class TestEmployeeDaoImpl {
+public class TestEmployeeDaoJdbc {
 
-	private EmployeeDAOImpl employeeDAO;
+	private EmployeeDao employeeDAO;
 	private static long testEmployeeId;
 
 	@BeforeEach
 	public void setUp() {
-		this.employeeDAO = new EmployeeDAOImpl();
+		this.employeeDAO = new EmployeeDaoJdbc();
 	}
 
 	@Order(1)
