@@ -11,7 +11,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- *
  * @author luperalt, bacn
  */
 @Entity
@@ -27,12 +26,12 @@ public class Employee {
     private String email;
 
     public Employee() {
-    	this.name = "";
-    	this.lastName = "";
-    	this.birthDate = "";
-    	this.role = "";
-    	this.department = "";
-    	this.email = "";
+        this.name = "";
+        this.lastName = "";
+        this.birthDate = "";
+        this.role = "";
+        this.department = "";
+        this.email = "";
     }
 
 
@@ -103,26 +102,26 @@ public class Employee {
 
     @Override
     public boolean equals(Object testObj) {
-    	SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-    	Employee testEmp = (Employee) testObj;
-    	Date thisBirth=null;
-    	Date testBirth=null;
-		try {
-			thisBirth = format.parse(this.birthDate);
-	    	testBirth = format.parse(testEmp.birthDate);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	if ((this.id==testEmp.id) &&
-    			this.name.equals(testEmp.name) &&
-    			this.lastName.equals(testEmp.lastName) &&
-    			this.role.equals(testEmp.role) &&
-    			thisBirth.equals(testBirth) &&
-    			this.department.equals(testEmp.department) &&
-    			this.email.equals(testEmp.email))
-    		return true;
-		return false;
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        Employee testEmp = (Employee) testObj;
+        Date thisBirth = null;
+        Date testBirth = null;
+        try {
+            thisBirth = format.parse(this.birthDate);
+            testBirth = format.parse(testEmp.birthDate);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        if ((this.id == testEmp.id) &&
+                this.name.equals(testEmp.name) &&
+                this.lastName.equals(testEmp.lastName) &&
+                this.role.equals(testEmp.role) &&
+                thisBirth.equals(testBirth) &&
+                this.department.equals(testEmp.department) &&
+                this.email.equals(testEmp.email))
+            return true;
+        return false;
 
     }
 

@@ -50,12 +50,12 @@ public class EmployeeJpa {
         entityManager.close();
     }
 
-    public long count () {
+    public long count() {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
 
-        Query query=entityManager.createQuery("SELECT COUNT (emp.id) FROM Employee emp");
-        long result =(long) query.getSingleResult();
+        Query query = entityManager.createQuery("SELECT COUNT (emp.id) FROM Employee emp");
+        long result = (long) query.getSingleResult();
         entityManager.getTransaction().commit();
         entityManager.close();
         return result;

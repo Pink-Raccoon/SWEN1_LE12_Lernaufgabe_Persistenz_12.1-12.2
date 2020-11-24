@@ -6,14 +6,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DataBaseUtil {
-    private static Connection conn=null;
+    private static Connection conn = null;
     private static DataBaseUtil dataBaseUtil = null;
     private static final Logger LOGGER = Logger.getLogger(DataBaseUtil.class.getName());
     private static final String DBDRIVER = "org.h2.Driver";
     private static final String CONNECTIONCONFIG = "jdbc:h2:mem:test";
 
     public static Connection getConn() {
-        if(dataBaseUtil == null) {
+        if (dataBaseUtil == null) {
             dataBaseUtil = new DataBaseUtil();
             dataBaseUtil.init();
         }
@@ -21,12 +21,12 @@ public class DataBaseUtil {
     }
 
     public void init() {
-        try{
+        try {
             loadH2Driver();
             establishH2DBConnection();
             setUpH2Database();
 
-        }catch(Exception e){
+        } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "OMG!! You can't use the Database by now, sorry :-(", e);
         }
     }
@@ -46,18 +46,18 @@ public class DataBaseUtil {
         try {
             Class.forName(DBDRIVER);
         } catch (ClassNotFoundException e) {
-            LOGGER.log(Level.SEVERE, "Driver "+DBDRIVER+" not found.", e);
+            LOGGER.log(Level.SEVERE, "Driver " + DBDRIVER + " not found.", e);
         }
     }
 
 
     private void setUpH2Database() {
 
-        try(Statement statement = conn.createStatement()) {
+        try (Statement statement = conn.createStatement()) {
             conn.setAutoCommit(false);
             statement.execute("CREATE TABLE PERSON(id int primary key AUTO_INCREMENT, firstName varchar(255), lastName varchar(255), birthday DATE," +
                     "position varchar(100), dept varchar(100), email varchar(255));");
-            String insertStatement ="INSERT INTO PERSON(firstName,lastName,birthday,position,dept,email) VALUES ";
+            String insertStatement = "INSERT INTO PERSON(firstName,lastName,birthday,position,dept,email) VALUES ";
             statement.execute(insertStatement +
                     "('John','Smith','1980-12-12','Manager','Sales','john.smith@abc.com');");
             statement.execute(insertStatement +
@@ -84,12 +84,12 @@ public class DataBaseUtil {
     }
 
     private void dropPersonTable() {
-        try(Statement statement = conn.createStatement()) {
+        try (Statement statement = conn.createStatement()) {
             conn.setAutoCommit(false);
             statement.execute("DROP TABLE PERSON;");
             conn.commit();
         } catch (SQLException e) {
-            LOGGER.log(Level.WARNING,"Don't Panic :-) I'm trying to drop the PERSON table but it's already gone. So, you can ignore this message.");
+            LOGGER.log(Level.WARNING, "Don't Panic :-) I'm trying to drop the PERSON table but it's already gone. So, you can ignore this message.");
         }
     }
 
