@@ -4,12 +4,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.sql.SQLException;
 
-import ch.zhaw.soe.swen1.le12.dao.EmployeeDao;
 import org.junit.Assert;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
+import ch.zhaw.soe.swen1.le12.dao.EmployeeDao;
 import ch.zhaw.soe.swen1.le12.domain.Employee;
 
+/**
+ * Test cases and basic usage patterns for EmployeeDao based on JDBC. 
+ */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestEmployeeDaoJdbc {
 

@@ -2,16 +2,17 @@
 
 package ch.zhaw.soe.swen1.le12.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
- * @author luperalt, bacn
+ * Employee domain class, annotated with JPA annotation. 
  */
 @Entity
 public class Employee {

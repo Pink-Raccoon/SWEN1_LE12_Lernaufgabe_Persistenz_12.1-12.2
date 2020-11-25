@@ -18,6 +18,11 @@ import ch.zhaw.soe.swen1.le12.config.DataBaseUtil;
 import ch.zhaw.soe.swen1.le12.dao.EmployeeDao;
 import ch.zhaw.soe.swen1.le12.domain.Employee;
 
+/**
+ * Implementing class of EmployeeDao interface based on JDBC. 
+ * @author fer
+ *
+ */
 public class EmployeeDaoJdbc implements EmployeeDao {
 
     // private List<Employee> employeeList = null;

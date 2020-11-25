@@ -4,6 +4,10 @@ import java.util.List;
 
 import ch.zhaw.soe.swen1.le12.domain.Employee;
 
+/**
+ * DAO interface for employee objects. 
+ *
+ */
 public interface EmployeeDao {
 
     long addEmployee(Employee employee);

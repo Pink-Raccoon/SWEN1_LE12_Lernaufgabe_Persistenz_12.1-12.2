@@ -1,13 +1,21 @@
 package ch.zhaw.soe.swen1.le12.dao.jpa;
 
 
-import ch.zhaw.soe.swen1.le12.domain.Employee;
-import org.junit.Assert;
-import org.junit.jupiter.api.*;
-
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
+import org.junit.Assert;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+
+import ch.zhaw.soe.swen1.le12.domain.Employee;
+
+/**
+ * Test cases and basic usage patterns for EmployeeDao based on JPA. 
+ */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TestEmployeeDaoJpa {
 

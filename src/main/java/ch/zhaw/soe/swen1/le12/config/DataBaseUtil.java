@@ -1,10 +1,19 @@
 package ch.zhaw.soe.swen1.le12.config;
 
-import java.sql.*;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Utility class to facilitate access to the H2 database
+ * and to provide a basic content.  
+ * When the connection 
+ *
+ */
 public class DataBaseUtil {
     private static Connection conn = null;
     private static DataBaseUtil dataBaseUtil = null;

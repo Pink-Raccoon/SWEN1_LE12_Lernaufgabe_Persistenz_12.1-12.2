@@ -1,15 +1,17 @@
 package ch.zhaw.soe.swen1.le12.config;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.sql.SQLException;
+
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLException;
-
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-
+/**
+ * Test cases for DataBaseUtil class
+ */
 public class TestDataBaseUtil {
 
 

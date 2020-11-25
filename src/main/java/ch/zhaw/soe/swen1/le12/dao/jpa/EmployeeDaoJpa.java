@@ -1,14 +1,20 @@
 package ch.zhaw.soe.swen1.le12.dao.jpa;
 
-import ch.zhaw.soe.swen1.le12.config.JPAUtil;
-import ch.zhaw.soe.swen1.le12.dao.EmployeeDao;
-import ch.zhaw.soe.swen1.le12.domain.Employee;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-import java.util.List;
 
+import ch.zhaw.soe.swen1.le12.config.JPAUtil;
+import ch.zhaw.soe.swen1.le12.dao.EmployeeDao;
+import ch.zhaw.soe.swen1.le12.domain.Employee;
+
+/**
+ * Implementing class of EmployeeDao interface based on JPA. 
+ * @author fer
+ *
+ */
 public class EmployeeDaoJpa implements EmployeeDao {
 
     @Override
