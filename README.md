@@ -1,12 +1,9 @@
-# SWEN1 Persistence Design Patterns
+# SWEN1 LE12 - Lernaufgeben Persistenz  
 
-https://github.zhaw.ch/SWEN1-LP2019/SWEN1_LE12_Lernaufgabe_Persistence_12.1-12.2.git
+Das Repository enhält den Code und Unit-Tests für die Lernaufgaben 12.1-12.2.
 
+1. DAO Mapper ohne ORM
+2. DAO Mapper mit ORM JPA/Hibernate
 
-The repository contains code samples and unit tests for the patterns
-
-1. DAO Mapper without ORM
-2. DAO Mapper with the ORM JPA/Hibernate
-
-Make sure you have JDK11 or higher installed.
+Voraussetzung ist Java 11 oder höher. 
 
