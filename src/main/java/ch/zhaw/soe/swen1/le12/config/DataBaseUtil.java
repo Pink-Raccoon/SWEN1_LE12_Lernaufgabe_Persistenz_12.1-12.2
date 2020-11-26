@@ -11,8 +11,6 @@ import java.util.logging.Logger;
 /**
  * Utility class to facilitate access to the H2 database
  * and to provide a basic content.  
- * When the connection 
- *
  */
 public class DataBaseUtil {
     private static Connection conn = null;
@@ -40,7 +38,6 @@ public class DataBaseUtil {
         }
     }
 
-
     private void establishH2DBConnection() throws SQLException {
         try {
             conn = DriverManager.getConnection(CONNECTIONCONFIG, "sa", "");
@@ -50,7 +47,6 @@ public class DataBaseUtil {
         }
     }
 
-
     private void loadH2Driver() {
         try {
             Class.forName(DBDRIVER);
@@ -58,7 +54,6 @@ public class DataBaseUtil {
             LOGGER.log(Level.SEVERE, "Driver " + DBDRIVER + " not found.", e);
         }
     }
-
 
     private void setUpH2Database() {
 

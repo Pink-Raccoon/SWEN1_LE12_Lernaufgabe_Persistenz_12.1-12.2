@@ -20,12 +20,9 @@ import ch.zhaw.soe.swen1.le12.domain.Employee;
 
 /**
  * Implementing class of EmployeeDao interface based on JDBC. 
- * @author fer
- *
  */
 public class EmployeeDaoJdbc implements EmployeeDao {
 
-    // private List<Employee> employeeList = null;
     private final Connection conn;
     private static final Logger LOGGER = Logger.getLogger(EmployeeDaoJdbc.class.getName());
 

@@ -28,7 +28,6 @@ public class TestEmployeeDaoJpa {
         this.employeeJpa = new EmployeeDaoJpa();
     }
 
-
     @Test
     @Order(1)
     public void shouldRetrieveNewEmployee()  throws SQLException {
@@ -39,7 +38,6 @@ public class TestEmployeeDaoJpa {
         Employee retrievedEmployee = employeeJpa.getEmployeeById(newId);
         Assert.assertEquals(retrievedEmployee, employee);
     }
-
 
     @Test
     @Order(4)

@@ -12,8 +12,6 @@ import ch.zhaw.soe.swen1.le12.domain.Employee;
 
 /**
  * Implementing class of EmployeeDao interface based on JPA. 
- * @author fer
- *
  */
 public class EmployeeDaoJpa implements EmployeeDao {
 

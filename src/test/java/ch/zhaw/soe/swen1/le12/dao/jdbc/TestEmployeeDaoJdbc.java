@@ -47,7 +47,6 @@ public class TestEmployeeDaoJdbc {
 		Assert.assertEquals(retrievedEmployee, testEmp);
 	}
 
-
 	@Order(5)
 	@Test
 	public void shouldDeleteEmployee() {
