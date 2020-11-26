@@ -1,4 +1,4 @@
-# SWEN1 LE12 - Lernaufgeben Persistenz  
+# SWEN1 LE12 - Lernaufgaben Persistenz  
 
 Das Repository enhält den Code und Unit-Tests für die Lernaufgaben 12.1-12.2.
 
